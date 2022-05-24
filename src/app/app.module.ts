@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -15,6 +16,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
+
+
+import { PokemonService } from './servicios/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +36,10 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
