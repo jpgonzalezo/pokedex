@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioPokedexComponent } from './inicio-pokedex/inicio-pokedex.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
     { path: '', component: InicioPokedexComponent }
@@ -18,7 +19,8 @@ const routes: Routes = [
         RouterModule.forChild(routes),
     ],
     declarations: [
-    InicioPokedexComponent
+    InicioPokedexComponent,
+    NavbarComponent
   ],
     exports:[],
     providers: []
