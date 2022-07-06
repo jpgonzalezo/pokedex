@@ -4,9 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioPokedexComponent } from './inicio-pokedex/inicio-pokedex.component';
+import { DetallePokemonComponent } from './detalle-pokemon/detalle-pokemon.component';
+import { PokemonService } from '../servicios/pokemon.service';
 
 const routes: Routes = [
-    { path: '', component: InicioPokedexComponent }
+    { path: '', component: InicioPokedexComponent },
+    { path: 'pokemon', component: DetallePokemonComponent }
 ]
 
 @NgModule({
@@ -18,9 +21,10 @@ const routes: Routes = [
         RouterModule.forChild(routes),
     ],
     declarations: [
-    InicioPokedexComponent
+    InicioPokedexComponent,
+    DetallePokemonComponent
   ],
     exports:[],
-    providers: []
+    providers: [PokemonService]
 })
 export class PokedexModule { }
