@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/servicios/pokemon.service';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -10,8 +11,11 @@ import { PokemonService } from 'src/app/servicios/pokemon.service';
 export class InicioPokedexComponent implements OnInit {
   pokemones:any;
   pokemonesv2 = [];
+  loading=true;
   constructor(
-    private  pokemonService:PokemonService
+    private  pokemonService:PokemonService,
+    private router:Router
+
   ) { }
 
   ngOnInit(): void {
@@ -50,11 +54,18 @@ export class InicioPokedexComponent implements OnInit {
             return 0
           }
         );
+        if (i==151) {
+          this.loading=false;
+        }
 
 
 
       }))
     }
+  }
+
+  verDetalle(id){
+    this.router.navigateByUrl('/pokedex/pokemon/'+id);
   }
 
 

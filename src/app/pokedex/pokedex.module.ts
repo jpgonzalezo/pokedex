@@ -5,11 +5,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioPokedexComponent } from './inicio-pokedex/inicio-pokedex.component';
 import { DetallePokemonComponent } from './detalle-pokemon/detalle-pokemon.component';
+import { NavbarComponent } from './navbar/navbar.component'
 import { PokemonService } from '../servicios/pokemon.service';
 
 const routes: Routes = [
     { path: '', component: InicioPokedexComponent },
-    { path: 'pokemon', component: DetallePokemonComponent }
+    { path: 'pokemon/:id', component: DetallePokemonComponent }
 ]
 
 @NgModule({
@@ -22,7 +23,8 @@ const routes: Routes = [
     ],
     declarations: [
     InicioPokedexComponent,
-    DetallePokemonComponent
+    DetallePokemonComponent,
+    NavbarComponent
   ],
     exports:[],
     providers: [PokemonService]
