@@ -12,12 +12,12 @@ import { PokedexModule } from './pokedex/pokedex.module'
 //import { routes } from './routes';
 
 export const routes: Routes =[
-    //{ path: 'home',             component: HomeComponent },
+/*     { path: 'home',             component: HomeComponent },
     { path: 'user-profile',     component: ProfileComponent },
-    //{ path: 'register',           component: SignupComponent },
-    //{ path: 'landing',          component: LandingComponent },
-    //{ path: 'login',          component: LoginComponent },
-    //
+    { path: 'register',           component: SignupComponent },
+    { path: 'landing',          component: LandingComponent },
+    { path: 'login',          component: LoginComponent }, */
+    
     { path: '', redirectTo: 'inicio', pathMatch: 'full' },
     { path: 'inicio' , loadChildren: ()=> import('./inicio/inicio.module').then(m=>m.InicioModule) },
     { path: 'pokedex', loadChildren: () => import('./pokedex/pokedex.module').then(m => m.PokedexModule) },

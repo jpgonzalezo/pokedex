@@ -1,0 +1,10 @@
+.section_login{
+    background-image: url("https://wallpaperset.com/w/full/f/8/a/187202.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+
+    background-size: cover;
+    height: 100%;
+    width: 100% ;
+    text-align: center;
+}
