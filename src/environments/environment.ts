@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API_BASE_URL: 'https://pokeapi.co/api/v2/',
-  API_VIDEOJUEGO: 'http://localhost:4000/'
+  API_VIDEOJUEGO: 'http://localhost:3000/v1/'
 };
 
 /*
