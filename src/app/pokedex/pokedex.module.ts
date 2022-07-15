@@ -7,6 +7,7 @@ import { InicioPokedexComponent } from './inicio-pokedex/inicio-pokedex.componen
 import { DetallePokemonComponent } from './detalle-pokemon/detalle-pokemon.component';
 import { NavbarComponent } from './navbar/navbar.component'
 import { PokemonService } from '../servicios/pokemon.service';
+import { StorageService } from "src/app/servicios/storage-service.service";
 
 const routes: Routes = [
     { path: '', component: InicioPokedexComponent },
@@ -27,6 +28,6 @@ const routes: Routes = [
     NavbarComponent
   ],
     exports:[],
-    providers: [PokemonService]
+    providers: [PokemonService,StorageService]
 })
 export class PokedexModule { }

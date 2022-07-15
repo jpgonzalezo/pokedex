@@ -18,6 +18,9 @@ import { LoginComponent } from './login/login.component';
 import { PokemonService } from './servicios/pokemon.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
+import { AuthorizatedService  } from './servicios/authorizated.service'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    //PokemonService
+    AuthorizatedService
   ],
   bootstrap: [AppComponent]
 })

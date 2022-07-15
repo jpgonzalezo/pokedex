@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/servicios/pokemon.service';
+import { StorageService } from 'src/app/servicios/storage-service.service';
 import { Router } from "@angular/router";
 
 
@@ -14,6 +15,7 @@ export class InicioPokedexComponent implements OnInit {
   loading=true;
   constructor(
     private  pokemonService:PokemonService,
+    private storageService: StorageService,
     private router:Router
 
   ) { }
@@ -22,6 +24,7 @@ export class InicioPokedexComponent implements OnInit {
     console.log(" FUE EL NGONINIT")
     //this.getAllPokemon()
     this.getAllPokemonv2()
+    console.log(this.storageService.getCurrentUser())
   }
 
   getAllPokemon(){

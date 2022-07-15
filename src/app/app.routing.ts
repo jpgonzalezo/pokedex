@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthorizatedService } from './servicios/authorizated.service';
 
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -20,7 +21,7 @@ export const routes: Routes =[
     
     { path: '', redirectTo: 'inicio', pathMatch: 'full' },
     { path: 'inicio' , loadChildren: ()=> import('./inicio/inicio.module').then(m=>m.InicioModule) },
-    { path: 'pokedex', loadChildren: () => import('./pokedex/pokedex.module').then(m => m.PokedexModule) },
+    { path: 'pokedex', loadChildren: () => import('./pokedex/pokedex.module').then(m => m.PokedexModule), canActivate:[AuthorizatedService] },
     { path: '**', redirectTo: 'inicio' }
 ]; 
 

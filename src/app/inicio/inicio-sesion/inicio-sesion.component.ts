@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { StorageService  } from 'src/app/servicios/storage-service.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-inicio-sesion',
@@ -12,6 +13,7 @@ export class InicioSesionComponent implements OnInit {
   userData: any
   constructor(
     private usuarioService: UsuarioService,
+    private storageService: StorageService,
     private formBuilderLogin: FormBuilder,
     private router: Router
   ) { }
@@ -33,10 +35,14 @@ export class InicioSesionComponent implements OnInit {
       (result => {
         this.userData = result
         console.log("los datos del usuario son: ", this.userData)
-        if (this.userData)
+        if (this.userData){
+          this.storageService.setCurrentUser(this.userData);
           this.router.navigateByUrl('/pokedex');
-        else
-          alert('Usuario no valido')
+        }
+          
+        else{
+          alert('Usuario no valido');
+        }
       })
     )
   }
